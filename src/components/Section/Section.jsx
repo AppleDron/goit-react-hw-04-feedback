@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { SectionContainer, SectionTitle } from './Section.styled';
 
-export default class Section extends Component {
-  render() {
-    return (
-      <SectionContainer>
-        <SectionTitle>{this.props.title}</SectionTitle>
+const Section = ({ title, children }) => {
+  return (
+    <SectionContainer>
+      <SectionTitle>{title}</SectionTitle>
+      {children}
+    </SectionContainer>
+  );
+};
 
-        {this.props.children}
-      </SectionContainer>
-    );
-  }
-}
+export default Section;
